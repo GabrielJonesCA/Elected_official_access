@@ -18,16 +18,63 @@ def my_function():
         select_element = driver.find_element(By.NAME, 'Subject')
         select = Select(select_element)
         select.select_by_visible_text('Contact the President')
-        time.sleep(3.5)
-        # FIRST NAME BOX 
-
-        FName = 'gabe'
-        search_box_first = driver.find_element_by_name("FirstName")
-        search_box_first.send_keys(FName)
-        time.sleep(3.5)
-
-
+        time.sleep(1.5)
         
+
+        # FIRST NAME BOX 
+        fname = ("Gabriel")
+        search_box_first = driver.find_element(By.NAME, 'FirstName')
+        search_box_first.send_keys(fname)
+        time.sleep(1.5)
+
+        # Last NAME BOX
+        lname = ("Jones")
+        search_box_first = driver.find_element(By.NAME, 'lastName')
+        search_box_first.send_keys(lname)
+        time.sleep(1.5)
+
+        # Email box
+        email = ("decemberfifthhungerstrike@gmail.com")
+        search_box_first = driver.find_element(By.NAME, 'email_address')
+        search_box_first.send_keys(email)
+        time.sleep(1.5)
+
+        # Phone box
+        phonenum = ("5551234567")
+        search_box_first = driver.find_element(By.NAME, 'phone')
+        search_box_first.send_keys(phonenum)
+        time.sleep(1.5)
+        
+        # Street name
+        street = ("123 Street rd")
+        search_box_first = driver.find_element(By.NAME, 'Street')
+        search_box_first.send_keys(street)
+        time.sleep(1.5)
+
+        # City name
+        city = ("city")
+        search_box_first = driver.find_element(By.NAME, 'City')
+        search_box_first.send_keys(city)
+        time.sleep(1.5)
+
+        # State* DROP DOWN
+        select_element = driver.find_element(By.NAME, 'State')
+        select = Select(select_element)
+        select.select_by_visible_text('California')
+        time.sleep(1.5)
+
+        # post code
+        postcode = ("123 Street rd")
+        search_box_first = driver.find_element(By.NAME, 'zipcode')
+        search_box_first.send_keys(postcode)
+        time.sleep(1.5)
+
+        # message
+        message = ("Dear Joe Biden, I am contacting you on behalf of the December 5th Hunger Strike. We need a ceasefire in Gaza now! More than 20,000 civilians, mainly children and women have been killed by the IDF. These are not human shields, These are victims of an intentional genocide and ethnic cleansing. Your support of far right governments brings the world closer to fascism. If we wish to not have Trump return to the white house it needs to start by not supporting leaders like him around the world. Thankyou for your time. Free Palestine")
+        search_box_first = driver.find_element(By.NAME, 'message')
+        search_box_first.send_keys(message)
+        time.sleep(1.5)
+
         driver.quit()
 
 
