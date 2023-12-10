@@ -22,37 +22,37 @@ def my_function():
         
 
         # FIRST NAME BOX 
-        fname = ("Gabriel")
+        fname = ("Gabriel")#put your first name here
         search_box_first = driver.find_element(By.NAME, 'FirstName')
         search_box_first.send_keys(fname)
         time.sleep(1.5)
 
         # Last NAME BOX
-        lname = ("Jones")
+        lname = ("Jones")#put your last name here
         search_box_first = driver.find_element(By.NAME, 'lastName')
         search_box_first.send_keys(lname)
         time.sleep(1.5)
 
         # Email box
-        email = ("decemberfifthhungerstrike@gmail.com")
+        email = ("decemberfifthhungerstrike@gmail.com")#put your email here
         search_box_first = driver.find_element(By.NAME, 'email_address')
         search_box_first.send_keys(email)
         time.sleep(1.5)
 
         # Phone box
-        phonenum = ("5551234567")
+        phonenum = ("5551234567")#put your phone number here
         search_box_first = driver.find_element(By.NAME, 'phone')
         search_box_first.send_keys(phonenum)
         time.sleep(1.5)
         
         # Street name
-        street = ("123 Street rd")
+        street = ("123 Street rd")#put your street address here
         search_box_first = driver.find_element(By.NAME, 'Street')
         search_box_first.send_keys(street)
         time.sleep(1.5)
 
         # City name
-        city = ("city")
+        city = ("Los Angeles")#put your city here
         search_box_first = driver.find_element(By.NAME, 'City')
         search_box_first.send_keys(city)
         time.sleep(1.5)
@@ -60,11 +60,11 @@ def my_function():
         # State* DROP DOWN
         select_element = driver.find_element(By.NAME, 'State')
         select = Select(select_element)
-        select.select_by_visible_text('California')
+        select.select_by_visible_text('California')#put your state here , capitalize first letter
         time.sleep(1.5)
 
         # post code
-        postcode = ("123 Street rd")
+        postcode = ("90001")#put your zipcode here
         search_box_first = driver.find_element(By.NAME, 'zipcode')
         search_box_first.send_keys(postcode)
         time.sleep(1.5)
@@ -75,11 +75,21 @@ def my_function():
         search_box_first.send_keys(message)
         time.sleep(1.5)
 
+        #dont get spammed by biden
+        driver.find_element(By.XPATH, '//*[@id="form_15_Optin_code"]').click()
+        time.sleep(3.5)
+
+        # SEND IT
+        driver.find_element(By.XPATH, '//*[@id="form_15_43"]').click()
+        time.sleep(4.5)
+        
+        
+        
         driver.quit()
 
 
 # running function how ever many times you want
-count = 1
+count = 0
 
 while count < 3:
         my_function()
