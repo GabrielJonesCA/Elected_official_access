@@ -1,0 +1,39 @@
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import Select
+import numpy as np
+
+
+
+def my_function():
+
+        global driver
+        driver = webdriver.Chrome()  # Optional argument, if not specified will search path.
+        driver.get('https://www.whitehouse.gov/contact/');
+        time.sleep(1.5) # Let the user actually see something!
+
+         # MESSAGE TYPE* DROP DOWN
+        select_element = driver.find_element(By.NAME, 'Subject')
+        select = Select(select_element)
+        select.select_by_visible_text('Contact the President')
+        time.sleep(3.5)
+        # FIRST NAME BOX 
+
+        FName = 'gabe'
+        search_box_first = driver.find_element_by_name("FirstName")
+        search_box_first.send_keys(FName)
+        time.sleep(3.5)
+
+
+        
+        driver.quit()
+
+
+# running function how ever many times you want
+count = 1
+
+while count < 3:
+        my_function()
+        count = count + 1
